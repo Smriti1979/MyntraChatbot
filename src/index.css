@@ -14,3 +14,7 @@ code {
 .a{
   font-size: 10px;
 }
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
