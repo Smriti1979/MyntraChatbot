@@ -12,7 +12,7 @@ const MainContent = ({ name }) => {
       </p>
       <div className="flex justify-center mt-20">
         <div className="flex gap-8">
-          <div className="flex-1 border border-gray-300 rounded-3xl p-4 text-center shadow-md max-w-[30vw] h-[30vh] md:w-30vw relative group">
+          <div className="flex-1 border border-gray-300 rounded-3xl p-4 text-center shadow-md max-w-[30vw] h-[30vh] md:w-25vw relative group">
             <h2 className="text-xl font-bold">Color Analysis Test</h2>
             <br/>
             <img src={color} alt="Color Analysis" className="mx-auto mt-2 w-[13vh] flex justify-center" />
@@ -25,7 +25,7 @@ const MainContent = ({ name }) => {
               }
             `}</style>
           </div>
-          <div className="flex-1 border border-gray-300 rounded-3xl p-4 text-center shadow-md max-w-[30vw] h-[30vh] md:w-30vw relative group">
+          <div className="flex-1 border border-gray-300 rounded-3xl p-4 text-center shadow-md max-w-[33vw] h-[30vh] md:w-25vw relative group">
             <h3 className="text-xl font-bold">Body Analysis Test</h3>
             <div className="flex justify-center">
               <img src={body3} alt="Body Analysis" className="mx-auto mt-4 w-[25vh] flex justify-center" /> 
@@ -43,7 +43,7 @@ const MainContent = ({ name }) => {
         </div>
       </div>
 
-      <div className="p-4 flex justify-center fix-bottom-2 mt-40">
+      <div className="p-4 flex justify-center fix-bottom-2 mt-20">
       <input
       type="text"
       placeholder="Ask for best recommendation"
