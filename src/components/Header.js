@@ -1,14 +1,19 @@
 // src/Header.js
 import React from 'react';
+import myntraLogo from '../Assets/logo-myntra.png'; 
+import chatbotLogo from '../Assets/Chatbot_logo.png';
 
 const Header = () => {
   return (
-    <div className="bg-white shadow-md p-4 flex justify-between items-center">
-      <div className="text-xl font-bold text-pink-600">
-        ChatBot
-      </div>
+    <div className="bg-white shadow-md p-1 flex justify-between items-center"> 
+    <div className="flex items-center">
+    <img src={chatbotLogo} alt="Chatbot Logo" className="h-16 w-16 mr-2"/>
+        <div className="text-4xl font-bold text-pink-600">
+            ChatBot
+        </div>
+    </div>
       <div>
-        <img src="path_to_logo.png" alt="Logo" className="h-8 w-8 inline-block mr-2"/>
+        <img src={myntraLogo} alt="Logo" className="h-20 w-50 inline-block mr-2"/>
       </div>
     </div>
   );

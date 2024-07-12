@@ -4,7 +4,7 @@ import React from 'react';
 const MainContent = ({ name }) => {
   return (
     <div className="flex-1 p-8">
-      <div className="text-3xl font-bold text-pink-500">
+      <div className="text-6xl font-bold text-pink-500">
         Hey <span className="text-pink-700">{name}!</span>
       </div>
       <p className="text-gray-700 mt-2">
