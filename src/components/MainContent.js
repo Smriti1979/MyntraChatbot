@@ -15,7 +15,7 @@ const MainContent = ({ name }) => {
           <div className="flex-1 border border-gray-300 rounded-3xl p-4 text-center shadow-md max-w-[45vh] h-[33vh] relative group">
             <h2 className="text-xl font-bold">Color Analysis Test</h2>
             <br/>
-            <img src={color} alt="Color Analysis" className="mx-auto mt-1 w-[13vh] flex justify-center" />
+            <img src={color} alt="Color Analysis" className="mx-auto mt-2 w-[13vh] flex justify-center" />
             <style jsx>{`
               .group:hover {
                 background-image: linear-gradient(to bottom, #feebf8 0%, #fff4ea 90%);
