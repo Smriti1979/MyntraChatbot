@@ -1,6 +1,8 @@
 // src/MainContent.js
 import React from 'react';
-
+import color from '../assets/color.png';
+import body1 from '../assets/body_1.png';
+import body2 from '../assets/body_2.png';
 const MainContent = ({ name }) => {
   return (
     <div className="flex-1 p-8">
@@ -11,16 +13,39 @@ const MainContent = ({ name }) => {
         Let's unlock your best self with our playful color and body analysis tests!
       </p>
 
-      <div className="mt-8 flex gap-8">
-        <div className="flex-1 bg-white border-2 border-gray-300 rounded-lg p-4 text-center shadow-md">
-          <img src="path_to_color_analysis_image.png" alt="Color Analysis" className="mx-auto" />
-          <h3 className="mt-4 text-lg font-semibold">Color Analysis Test</h3>
-        </div>
-        <div className="flex-1 bg-white border-2 border-gray-300 rounded-lg p-4 text-center shadow-md">
-          <img src="path_to_body_analysis_image.png" alt="Body Analysis" className="mx-auto" />
-          <h3 className="mt-4 text-lg font-semibold">Body Analysis Test</h3>
+      <div className="flex justify-center mt-8">
+        <div className="flex gap-8">
+          <div className="flex-1 border border-gray-300 rounded-3xl p-4 text-center shadow-md w-[400px] h-[250px] relative group">
+            <h3 className="text-lg font-bold">Color Analysis Test</h3>
+            <br/>
+            <img src={color} alt="Color Analysis" className="mx-auto mt-4" />
+            <style jsx>{`
+              .group:hover {
+                background-image: linear-gradient(to bottom, #feebf8 0%, #fff4ea 90%);
+              }
+              .group:active {
+                background-image: linear-gradient(to bottom, #fcd5f0 0%, #fae2cc 90%);
+              }
+            `}</style>
+          </div>
+          <div className="flex-1 border border-gray-300 rounded-3xl p-4 text-center shadow-md w-[400px] h-[250px] relative group">
+            <h3 className="text-lg font-bold">Body Analysis Test</h3>
+            <div className="flex justify-center">
+              <img src={body2} alt="Body Analysis" className="mx-auto mt-4 w-[180px]" /> 
+              <img src={body1} alt="Body Analysis" className="mx-auto mt-4 w-[190px]" />
+            </div>
+            <style jsx>{`
+              .group:hover {
+                background-image: linear-gradient(to bottom, #feebf8 0%, #fff4ea 90%);
+              }
+              .group:active {
+                background-image: linear-gradient(to bottom, #fcd5f0 0%, #fae2cc 90%);
+              }
+            `}</style>
+          </div>
         </div>
       </div>
+
 
       <div className="mt-8 flex items-center">
         <input
