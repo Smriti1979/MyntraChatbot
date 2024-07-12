@@ -1,7 +1,7 @@
 // src/Header.js
 import React from 'react';
-import myntraLogo from '../Assets/logo-myntra.png'; 
-import chatbotLogo from '../Assets/Chatbot_logo.png';
+import myntraLogo from '../assets/logo-myntra.png'; 
+import chatbotLogo from '../assets/Chatbot_logo.png';
 
 const Header = () => {
   return (

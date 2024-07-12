@@ -1,24 +1,21 @@
-// src/MainContent.js
 import React from 'react';
 import color from '../assets/color.png';
-import body1 from '../assets/body_1.png';
-import body2 from '../assets/body_2.png';
+import body3 from '../assets/body_3.png';
 const MainContent = ({ name }) => {
   return (
     <div className="flex-1 p-8">
-      <div className="text-6xl font-bold text-pink-500">
+      <div className="text-6xl font-bold text-pink-500 text-center mb-8">
         Hey <span className="text-pink-700">{name}!</span>
       </div>
-      <p className="text-gray-700 mt-2">
+      <p className="text-gray-700 text-center mb-8">
         Let's unlock your best self with our playful color and body analysis tests!
       </p>
-
-      <div className="flex justify-center mt-8">
+      <div className="flex justify-center mt-20">
         <div className="flex gap-8">
-          <div className="flex-1 border border-gray-300 rounded-3xl p-4 text-center shadow-md w-[400px] h-[250px] relative group">
-            <h3 className="text-lg font-bold">Color Analysis Test</h3>
+          <div className="flex-1 border border-gray-300 rounded-3xl p-4 text-center shadow-md max-w-[45vh] h-[33vh] relative group">
+            <h2 className="text-xl font-bold">Color Analysis Test</h2>
             <br/>
-            <img src={color} alt="Color Analysis" className="mx-auto mt-4" />
+            <img src={color} alt="Color Analysis" className="mx-auto mt-1 w-[13vh] flex justify-center" />
             <style jsx>{`
               .group:hover {
                 background-image: linear-gradient(to bottom, #feebf8 0%, #fff4ea 90%);
@@ -28,11 +25,11 @@ const MainContent = ({ name }) => {
               }
             `}</style>
           </div>
-          <div className="flex-1 border border-gray-300 rounded-3xl p-4 text-center shadow-md w-[400px] h-[250px] relative group">
-            <h3 className="text-lg font-bold">Body Analysis Test</h3>
+          <div className="flex-1 border border-gray-300 rounded-3xl p-4 text-center shadow-md max-w-[45vh] h-[33vh] relative group">
+            <h3 className="text-xl font-bold">Body Analysis Test</h3>
             <div className="flex justify-center">
-              <img src={body2} alt="Body Analysis" className="mx-auto mt-4 w-[180px]" /> 
-              <img src={body1} alt="Body Analysis" className="mx-auto mt-4 w-[190px]" />
+              <img src={body3} alt="Body Analysis" className="mx-auto mt-4 w-[25vh] flex justify-center" /> 
+
             </div>
             <style jsx>{`
               .group:hover {
@@ -45,7 +42,6 @@ const MainContent = ({ name }) => {
           </div>
         </div>
       </div>
-
 
       <div className="mt-8 flex items-center">
         <input
@@ -64,3 +60,4 @@ const MainContent = ({ name }) => {
 };
 
 export default MainContent;
+
