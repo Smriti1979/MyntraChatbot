@@ -8,11 +8,15 @@ const ChatBotDashboard = () => {
   const userName = 'Divyanshi'; // Replace with dynamic user name as needed
 
   return (
-    <div className="min-h-screen flex flex-col">
-      <Header />
-      <div className="flex flex-1">
-        <Sidebar />
-        <MainContent name={userName} />
+    <div className="flex h-screen">
+      <Sidebar />
+      <div className="flex-1 flex flex-col">
+        <Header />
+        {/* Main content area */}
+        <div className="p-4">
+          {/* Other content goes here */}
+          <MainContent name={userName}/>
+        </div>
       </div>
     </div>
   );
