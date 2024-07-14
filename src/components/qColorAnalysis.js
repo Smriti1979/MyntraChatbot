@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import Sidebar from './Sidebar'; 
-import questionsData from './questionsData'; 
+import questionsData from './questionsData'; // Assuming questionsData is imported from a file
+import MainContent from './MainContent'; // Corrected import
+import Sidebar from './Sidebar'; // Corrected import
 
 const QColorAnalysis = () => {
-  const [currentQuestion, setCurrentQuestion] = useState(0);
   const [answers, setAnswers] = useState([]);
-  const [analysisResult, setAnalysisResult] = useState(null); // New state variable for the result
+  const [currentQuestion, setCurrentQuestion] = useState(0);
 
   const handleOptionSelect = (optionId) => {
     setAnswers([...answers, { questionId: questionsData[currentQuestion].id, optionId }]);
@@ -24,28 +24,38 @@ const QColorAnalysis = () => {
   };
 
   return (
-    <div className="flex h-screen"> 
-      <Sidebar /> 
+    <div className="flex h-screen">
+      <Sidebar /> {/* Assuming Sidebar contains navigation or other persistent content */}
       <div className="flex-1 flex flex-col">
         <div className="p-4">
           <h1 className="text-3xl font-bold mb-4">Color Analysis Test</h1>
-          {currentQuestion < questionsData.length ? (
-            <div>
-              <div className="flex mb-4">
-                <img className="mr-4" src={questionsData[currentQuestion].options[0].imageUrl} alt="Option 1" />
-                <img src={questionsData[currentQuestion].options[1].imageUrl} alt="Option 2" />
+          <div>
+            {questionsData.map((question, index) => (
+              <div key={question.id} style={{ display: index <= currentQuestion ? 'block' : 'none', marginBottom: '20px' }}>
+                <div className="mb-4">{question.question}</div>
+                <div>
+                  {question.options.map(option => (
+                    <div key={option.id} className="mb-4 flex items-center">
+                      <input 
+                        type="radio" 
+                        id={option.id} 
+                        name={`question${question.id}`} 
+                        onChange={() => handleOptionSelect(option.id)} 
+                        className="mr-2"
+                      />
+                      <img 
+                        src={option.imageUrl} 
+                        alt={option.text} 
+                        className="mr-2 w-16 h-16 object-cover" 
+                      />
+                      <label htmlFor={option.id} className="ml-2">{option.text}</label>
+                    </div>
+                  ))}
+                </div>
               </div>
-              <div className="mb-4">{questionsData[currentQuestion].question}</div>
-              <div>
-                {questionsData[currentQuestion].options.map(option => (
-                  <div key={option.id} className="mb-2">
-                    <input type="radio" id={option.id} name={`question${questionsData[currentQuestion].id}`} onChange={() => handleOptionSelect(option.id)} />
-                    <label htmlFor={option.id} className="ml-2">{option.text}</label>
-                  </div>
-                ))}
-              </div>
-            </div>
-          ) : (
+            ))}
+          </div>
+          {currentQuestion === questionsData.length && (
             <div>
               <p className="mb-4">All questions answered. Click submit to proceed.</p>
               <button onClick={handleSubmit} className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
@@ -67,3 +77,5 @@ const QColorAnalysis = () => {
 };
 
 export default QColorAnalysis;
+
+
