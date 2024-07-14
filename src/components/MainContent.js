@@ -1,7 +1,9 @@
 import React from 'react';
 import color from '../assets/color.png';
 import body3 from '../assets/body_3.png';
+
 const MainContent = ({ name }) => {
+
   return (
     <div className="flex-1 p-8">
       <div className="text-6xl font-bold text-pink-500 text-center mb-8">
@@ -12,7 +14,7 @@ const MainContent = ({ name }) => {
       </p>
       <div className="flex justify-center mt-20">
         <div className="flex gap-8">
-          <div className="flex-1 border border-gray-300 rounded-3xl p-4 text-center shadow-md max-w-[30vw] h-[30vh] md:w-25vw relative group">
+          <div className="flex-1 border border-gray-300 rounded-3xl p-4 text-center shadow-md max-w-[30vw] h-[30vh] md:w-25vw relative group" >
             <h2 className="text-xl font-bold">Color Analysis Test</h2>
             <br/>
             <img src={color} alt="Color Analysis" className="mx-auto mt-2 w-[13vh] flex justify-center" />
