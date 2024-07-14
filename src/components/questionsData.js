@@ -27,7 +27,7 @@ import blueGreenVeinImage from '../assets/images/blue_green.png';
 const questionsData = [
     {
       id: 1,
-      question: 'Which skin tone best describes you ? ',
+      question: '1. Which skin tone best describes you ? ',
       options: [
         { id: 1, text: 'Fair', imageUrl: fairImage },
         { id: 2, text: 'Light', imageUrl: lightImage },
@@ -40,7 +40,7 @@ const questionsData = [
     },
     {
       id: 2,
-      question: 'Please select your current hair color . ',
+      question: '2. Please select your current hair color . ',
       options: [
         { id: 2, text: 'Dark Brown', imageUrl: darkBrownImage },
         { id: 3, text: 'Chocolate Red', imageUrl: chocoRedHairImage },
@@ -50,7 +50,7 @@ const questionsData = [
     },
     {
       id: 3,
-      question: 'What eye color do you have ? ',
+      question: '3. What eye color do you have ? ',
       options: [
         { id: 1, text: 'Black', imageUrl: blackEyeImage },
         { id: 2, text: 'Dark Brown', imageUrl: darkBrownEyeImage },
@@ -63,7 +63,7 @@ const questionsData = [
     },
     {
       id: 4,
-      question: 'Which blush color do you naturally have ? ',
+      question: '4. Which blush color do you naturally have ? ',
       options: [
         { id: 1, text: 'Pink', imageUrl: pinkBlushImage },
         { id: 2, text: 'Peach', imageUrl: peachBlushImage },
@@ -73,7 +73,7 @@ const questionsData = [
     },
     {
       id: 5,
-      question: 'What is the color of your veins ? ',
+      question: '5. What is the color of your veins ? ',
       options: [
         { id: 1, text: 'Blue-Purple', imageUrl: bluePurpleVeinImage },
         { id: 2, text: 'Green-Olive', imageUrl: greenOliveVeinImage },
