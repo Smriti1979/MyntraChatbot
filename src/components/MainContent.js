@@ -1,7 +1,7 @@
 import React from 'react';
 import color from '../assets/color.png';
 import body3 from '../assets/body_3.png';
-import { Link } from 'react-router-dom'; // Import Link for navigation
+import { Link } from 'react-router-dom'; 
 
 const MainContent = ({ name }) => {
 
