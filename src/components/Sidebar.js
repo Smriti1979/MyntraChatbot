@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { FaBars, FaPlus, FaUser } from 'react-icons/fa';
 
 const Sidebar = () => {
-  const [isOpen, setIsOpen] = useState(true);
+  const [isOpen, setIsOpen] = useState(false);
 
   const toggleSidebar = () => {
     setIsOpen(!isOpen);
