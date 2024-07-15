@@ -1,46 +1,60 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import questionsData from './questionsData'; // Assuming questionsData is imported from a file
-import MainContent from './MainContent'; // Corrected import
-import Sidebar from './Sidebar'; // Corrected import
+import questionsData from './questionsData';
+import Sidebar from './Sidebar'; 
 
 const QColorAnalysis = () => {
   const [answers, setAnswers] = useState([]);
   const [currentQuestion, setCurrentQuestion] = useState(0);
+  const [analysisResult, setAnalysisResult] = useState(null);
 
-  const handleOptionSelect = (optionId) => {
-    setAnswers([...answers, { questionId: questionsData[currentQuestion].id, optionId }]);
+  const handleOptionSelect = (event) => {
+    const optionId = event.target.id;
+    const currentQuestionObj = questionsData[currentQuestion];
+
+    const selectedOption = currentQuestionObj.options.find(option => option.id === parseInt(optionId));
+    const optionText = selectedOption.text;
+  
+    setAnswers(prevAnswers => [
+      ...prevAnswers,
+      { questionId: questionsData[currentQuestion].question, optionText }
+    ]);
     setCurrentQuestion(currentQuestion + 1);
   };
 
   const handleSubmit = async () => {
     try {
-      await axios.post('http://localhost:3000/user-input', answers);
-      const response = await axios.post('http://localhost:3000/color-analysis');
-      // Handle response as needed
+      console.log('User input submitted:', answers);
+  
+      const response = await axios.post('http://localhost:3000/user-input', {
+        answers: answers  
+      });
+  
+      console.log('Server response:', response.data);
+      setAnalysisResult(response.data.result);
     } catch (error) {
-      console.error('Error during analysis:', error);
+      console.error('Error during analysis:', error.response ? error.response.data : error.message);
     }
   };
 
   return (
-    <div className="flex h-screen">
-      <Sidebar /> {/* Assuming Sidebar contains navigation or other persistent content */}
-      <div className="flex-1 flex flex-col">
+    <div className="flex h-screen overflow-hidden">
+      <Sidebar /> 
+      <div className="flex-1 flex flex-col overflow-y-auto ml-10">
         <div className="p-4">
-          <h1 className="text-3xl font-bold mb-4">Color Analysis Test</h1>
+          <h1 className="text-3xl font-bold mb-4 text-pink-500">Color Analysis Test</h1>
           <div>
             {questionsData.map((question, index) => (
               <div key={question.id} style={{ display: index <= currentQuestion ? 'block' : 'none', marginBottom: '20px' }}>
-                <div className="mb-4">{question.question}</div>
-                <div>
+                <div className="mb-10">{question.question}</div>
+                <div className="flex flex-wrap">
                   {question.options.map(option => (
-                    <div key={option.id} className="mb-4 flex items-center">
+                    <div key={option.id} className="mb-8 flex items-center mr-4">
                       <input 
                         type="radio" 
                         id={option.id} 
                         name={`question${question.id}`} 
-                        onChange={() => handleOptionSelect(option.id)} 
+                        onChange={handleOptionSelect} 
                         className="mr-2"
                       />
                       <img 
@@ -63,6 +77,12 @@ const QColorAnalysis = () => {
               </button>
             </div>
           )}
+          {analysisResult && (
+            <div className="mt-4">
+              <h2 className="text-2xl font-bold">Analysis Result</h2>
+              <p>{analysisResult}</p> 
+            </div>
+          )}
         </div>
       </div>
     </div>
@@ -70,5 +90,3 @@ const QColorAnalysis = () => {
 };
 
 export default QColorAnalysis;
-
-
