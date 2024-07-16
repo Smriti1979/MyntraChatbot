@@ -19,7 +19,7 @@ import greyEyeImage from '../assets/images/grey_eye.png';
 import pinkBlushImage from '../assets/images/pink_blush.png';
 import peachBlushImage from '../assets/images/peach_blush.png';
 import redBlushImage from '../assets/images/red_blush.png';
-import noneImage from '../assets/images/none_blush.png';
+import noneImage from '../assets/images/none_blush.jpeg';
 import bluePurpleVeinImage from '../assets/images/blue_purple.png';
 import greenOliveVeinImage from '../assets/images/green_olive.png';
 import blueGreenVeinImage from '../assets/images/blue_green.png';
