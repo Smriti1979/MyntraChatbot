@@ -21,10 +21,14 @@ const ChatBotDashboard = () => {
             Go to Color Analysis
           </Link>
         </div>
+        <div className="flex justify-center mt-4">
+          <Link to="/qBodyAnalysis" className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+            Go to Body Analysis
+          </Link>
+        </div>
       </div>
     </div>
   );
 };
 
 export default ChatBotDashboard;
-
