@@ -63,10 +63,10 @@ const QColorAnalysis = () => {
             </div>
             {questionsData.map((question, index) => (
               <div key={question.id} style={{ display: index <= currentQuestion ? 'block' : 'none', marginBottom: '20px' }} className="mb-8 flex items-start ml-10">
-                <div className="mb-10 flex item-center text-pink-800"><img src={logo} alt="logo" className="mr-2 w-8 h-8"></img>{question.question}</div>
+                <div className="mb-10 flex item-center text-pink-800 border-width: 2px"><img src={logo} alt="logo" className="mr-2 w-8 h-8"></img>{question.question}</div>
                 <div className="flex flex-wrap">
                   {question.options.map(option => (
-                    <div key={option.id} className="mb-8 flex items-center mr-4 ml-10">
+                    <div key={option.id} className="mb-8 flex items-center mr-4 ml-10 ">
                       <input 
                         type="radio" 
                         id={option.id} 
